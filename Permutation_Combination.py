@@ -13,7 +13,7 @@ def combination(n: int, r: int):  # defining permutation and its parameters
     return numerator // denomenator  # returns (numerator // denominator); used // instead of / to return as int
 
 
-def values(var: str):
+def values(var: str):  # defining values and its parameters
     while True:
         val = input(f'{var} = ')
         try:
@@ -27,7 +27,7 @@ def values(var: str):
             continue
 
 
-def get_values():
+def get_values():  # defining get_values and its parameters
     while True:
         n_val = values('n')
         r_val = values('r')
@@ -44,10 +44,10 @@ choice = ''  # defining choice
 perm_choice = ['P', 'p', 'permutation', 'Permutation']  # a list of possible choices for permutation
 comb_choice = ['C', 'c', 'combination', 'Combination']  # a list of possible choices for combination
 
-while choice not in perm_choice and choice not in comb_choice:
-    choice = input('P or C?\n')
-    if choice not in perm_choice and choice not in comb_choice:
-        print('Please choose either P or C')
+while choice not in perm_choice + comb_choice:  # run this loop until choice equals a value in the combine lists
+    choice = input('P or C?\n')  # prints this message and choice will be equal to the user input as a string
+    if choice not in perm_choice + comb_choice:  # if choice not equal to value in combined lists
+        print('Please choose either P or C')  # prints this messgage
 
 if choice in perm_choice:
     print('P(n,r)')
