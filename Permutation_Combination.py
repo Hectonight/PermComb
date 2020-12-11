@@ -20,10 +20,10 @@ def values(var: str):  # defining values and its parameters
             if int(val) >= 0:
                 return int(val)
             else:  # executes if the if statement above is false
-                print(f'Input a positive integer for {var}')  # prints the string and the variable
+                print(f'Input a positive integer for {var}')  # prints this string and the variable var
                 continue  # continues to the next iteration of the loop
         except ValueError:  # executes if there is an ValueError in the try function
-            print(f'Input a positive integer for {var}')  # prints the string and the variable
+            print(f'Input a positive integer for {var}')  # prints this string and the variable var
             continue  # continues to the next iteration of the loop
 
 
@@ -37,7 +37,7 @@ def get_values():  # defining get_values and its parameters
                 'r': r_val  # creates key 'r' with value r_val
             }  # end of dictionary
         else:  # executes if the if statement above is false
-            print('n must be greater than r')
+            print('n must be greater than r')  # prints this string
 
 
 choice = ''  # defining choice
@@ -45,19 +45,19 @@ perm_choice = ['P', 'p', 'permutation', 'Permutation']  # a list of possible cho
 comb_choice = ['C', 'c', 'combination', 'Combination']  # a list of possible choices for combination
 
 while choice not in perm_choice + comb_choice:  # run this loop until choice equals a value in the combine lists
-    choice = input('P or C?\n')  # prints this message and choice will be equal to the user input as a string
+    choice = input('P or C?\n')  # prints this string and choice will be equal to the user input as a string
     if choice not in perm_choice + comb_choice:  # if choice not equal to value in combined lists
-        print('Please choose either P or C')  # prints this messgage
+        print('Please choose either P or C')  # prints this string
 
 if choice in perm_choice:  # testing if choice is permutation
-    print('P(n,r)')  # prints ths message
+    print('P(n,r)')  # prints this string
     var_val = get_values()  # var_val is equal to the output of the function get_values()
     output = permutation(var_val['n'], var_val['r'])
     # output is equal to the output of the function permutation with attribute n being the key 'n' in the dictionary
     # var_val and atrribute r being the value of
     # key 'r' in the dictionary
 else:  # executes if the if statement above is false
-    print('C(n,r)')  # prints ths message
+    print('C(n,r)')  # prints this string
     var_val = get_values()  # var_val is equal to the output of the function get_values()
     output = combination(var_val['n'], var_val['r'])
     # output is equal to the output of the function permutation with attribute n being the key 'n' in the dictionary
