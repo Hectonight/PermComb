@@ -31,7 +31,7 @@ def get_values():  # defining get_values and its parameters
     while True:  # create an infite loop
         n_val = values('n')  # n_val is equal to the output of values with attribute var equal to 'n'
         r_val = values('r')  # r_val is equal to the output of values with attribute var equal to 'r'
-        if n_val >= r_val:
+        if n_val >= r_val:  # will execute the code below if the variable n_val is greater than or equal to r_val
             return {  # returning this dictionary as the output; start of dictionary
                 'n': n_val,  # creates key 'n' with value n_val
                 'r': r_val  # creates key 'r' with value r_val
