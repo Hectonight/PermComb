@@ -16,27 +16,27 @@ def combination(n: int, r: int):  # defining permutation and its parameters
 def values(var: str):  # defining values and its parameters
     while True:  # create an infinite loop
         val = input(f'{var} = ')
-        try:
+        try:  # the try function will try to run the code below but it will test the except if there is an error
             if int(val) >= 0:
                 return int(val)
-            else:
-                print(f'Input a positive integer for {var}')
-                continue
-        except:
-            print(f'Input a positive integer for {var}')
-            continue
+            else:  # executes if the if statement above is false
+                print(f'Input a positive integer for {var}')  # prints the string and the variable
+                continue  # continues to the next iteration of the loop
+        except ValueError:  # executes if there is an ValueError in the try function
+            print(f'Input a positive integer for {var}')  # prints the string and the variable
+            continue  # continues to the next iteration of the loop
 
 
 def get_values():  # defining get_values and its parameters
     while True:  # create an infite loop
-        n_val = values('n')
-        r_val = values('r')
+        n_val = values('n')  # n_val is equal to the output of values with attribute var equal to 'n'
+        r_val = values('r')  # r_val is equal to the output of values with attribute var equal to 'r'
         if n_val >= r_val:
             return {  # returning this dictionary as the output; start of dictionary
                 'n': n_val,  # creates key 'n' with value n_val
                 'r': r_val  # creates key 'r' with value r_val
             }  # end of dictionary
-        else:
+        else:  # executes if the if statement above is false
             print('n must be greater than r')
 
 
@@ -58,7 +58,10 @@ if choice in perm_choice:  # testing if choice is permutation
     # key 'r' in the dictionary
 else:  # executes if the if statement above is false
     print('C(n,r)')  # prints ths message
-    var_val = get_values()
+    var_val = get_values()  # var_val is equal to the output of the function get_values()
     output = combination(var_val['n'], var_val['r'])
+    # output is equal to the output of the function permutation with attribute n being the key 'n' in the dictionary
+    # var_val and atrribute r being the value of
+    # key 'r' in the dictionary
 
 print(output)  # prints the variable output
