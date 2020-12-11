@@ -14,7 +14,7 @@ def combination(n: int, r: int):  # defining permutation and its parameters
 
 
 def values(var: str):  # defining values and its parameters
-    while True:
+    while True:  # create an infinite loop
         val = input(f'{var} = ')
         try:
             if int(val) >= 0:
@@ -28,14 +28,14 @@ def values(var: str):  # defining values and its parameters
 
 
 def get_values():  # defining get_values and its parameters
-    while True:
+    while True:  # create an infite loop
         n_val = values('n')
         r_val = values('r')
         if n_val >= r_val:
-            return {
-                'n': n_val,
-                'r': r_val
-            }
+            return {  # returning this dictionary as the output; start of dictionary
+                'n': n_val,  # creates key 'n' with value n_val
+                'r': r_val  # creates key 'r' with value r_val
+            }  # end of dictionary
         else:
             print('n must be greater than r')
 
@@ -49,13 +49,16 @@ while choice not in perm_choice + comb_choice:  # run this loop until choice equ
     if choice not in perm_choice + comb_choice:  # if choice not equal to value in combined lists
         print('Please choose either P or C')  # prints this messgage
 
-if choice in perm_choice:
-    print('P(n,r)')
-    var_val = get_values()
+if choice in perm_choice:  # testing if choice is permutation
+    print('P(n,r)')  # prints ths message
+    var_val = get_values()  # var_val is equal to the output of the function get_values()
     output = permutation(var_val['n'], var_val['r'])
-else:
-    print('C(n,r)')
+    # output is equal to the output of the function permutation with attribute n being the key 'n' in the dictionary
+    # var_val and atrribute r being the value of
+    # key 'r' in the dictionary
+else:  # executes if the if statement above is false
+    print('C(n,r)')  # prints ths message
     var_val = get_values()
     output = combination(var_val['n'], var_val['r'])
 
-print(output)
+print(output)  # prints the variable output
