@@ -15,10 +15,10 @@ def combination(n: int, r: int):  # defining permutation and its parameters
 
 def values(var: str):  # defining values and its parameters
     while True:  # create an infinite loop
-        val = input(f'{var} = ')
+        val = input(f'{var} = ')  # prints the variable var and " = " then sets val to the user input as a string
         try:  # the try function will try to run the code below but it will test the except if there is an error
-            if int(val) >= 0:
-                return int(val)
+            if int(val) >= 0:  # testing if the integer of val is greater than or equal to zero
+                return int(val)  # returns the integer of value of val
             else:  # executes if the if statement above is false
                 print(f'Input a positive integer for {var}')  # prints this string and the variable var
                 continue  # continues to the next iteration of the loop
